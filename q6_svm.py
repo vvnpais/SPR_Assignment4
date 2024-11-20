@@ -203,7 +203,6 @@ for dataset_name in ['Dataset 1a: LS', 'Dataset 1b: NLS']:
 
 # DATASET 2
 for dataset_name in ['Dataset 2: Group12-SUN397(2b2)']:
-    os.makedirs(dataset_name, exist_ok=True)
     datafile = open(f'svm_{dataset_name}.txt', 'w')
     DATASET_DIR = 'DATASET_ASSIGNMENT4'
     dataset = os.path.join(DATASET_DIR, dataset_name)

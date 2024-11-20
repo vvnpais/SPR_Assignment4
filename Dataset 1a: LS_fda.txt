@@ -1,0 +1,78 @@
+Metrics Gaussian:
+{
+    "accuracy": 1.0,
+    "precision_per_class": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "mean_precision": 1.0,
+    "recall_per_class": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "mean_recall": 1.0,
+    "f_measure_per_class": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "mean_f_measure": 1.0,
+    "confusion_matrix": [
+        [
+            150.0,
+            0.0,
+            0.0
+        ],
+        [
+            0.0,
+            150.0,
+            0.0
+        ],
+        [
+            0.0,
+            0.0,
+            150.0
+        ]
+    ]
+}
+Metrics GMM:
+{
+    "accuracy": 1.0,
+    "precision_per_class": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "mean_precision": 1.0,
+    "recall_per_class": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "mean_recall": 1.0,
+    "f_measure_per_class": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "mean_f_measure": 1.0,
+    "confusion_matrix": [
+        [
+            150.0,
+            0.0,
+            0.0
+        ],
+        [
+            0.0,
+            150.0,
+            0.0
+        ],
+        [
+            0.0,
+            0.0,
+            150.0
+        ]
+    ]
+}

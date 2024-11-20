@@ -1,0 +1,17 @@
+{
+    "Predicted 0": {
+        "Actual 0": 0,
+        "Actual 1": 0,
+        "Actual 2": 0
+    },
+    "Predicted 1": {
+        "Actual 0": 35,
+        "Actual 1": 33,
+        "Actual 2": 5
+    },
+    "Predicted 2": {
+        "Actual 0": 15,
+        "Actual 1": 17,
+        "Actual 2": 45
+    }
+}

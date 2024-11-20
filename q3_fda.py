@@ -6,6 +6,8 @@ from scipy.stats import multivariate_normal
 from itertools import combinations
 from collections import Counter
 import os
+import matplotlib.pyplot as plt
+import json_tricks as json
 
 
 def calculate_metrics(y_true, y_pred, k):
@@ -44,9 +46,8 @@ def calculate_metrics(y_true, y_pred, k):
     }
 
 
-def perform_pairwise_fda_and_bayes(X_train, X_test, y_train, y_test, n_classes, gmm_components=1):
+def perform_pairwise_fda_and_bayes(X_train, X_test, y_train, y_test, n_classes, datafile, gmm_components=1):
     class_pairs = list(combinations(range(n_classes), 2))
-    lda_models = {}
     pairwise_predictions_gaussian = []
     pairwise_predictions_gmm = []
 
@@ -65,7 +66,6 @@ def perform_pairwise_fda_and_bayes(X_train, X_test, y_train, y_test, n_classes, 
         lda = LDA(n_components=1)
         X_train_fda = lda.fit_transform(X_train_pair, y_train_pair_binary)
         X_test_fda = lda.transform(X_test_pair)
-        lda_models[(c1, c2)] = lda
 
         means = []
         covariances = []
@@ -109,12 +109,129 @@ def perform_pairwise_fda_and_bayes(X_train, X_test, y_train, y_test, n_classes, 
     y_pred_gmm = perform_max_voting(pairwise_predictions_gmm, y_test)
 
     metrics_gaussian = calculate_metrics(y_test, y_pred_gaussian, n_classes)
+    print(f'Metrics Gaussian:\n{json.dumps(
+        metrics_gaussian, indent=4)}', file=datafile)
     metrics_gmm = calculate_metrics(y_test, y_pred_gmm, n_classes)
+    print(f'Metrics GMM:\n{json.dumps(metrics_gmm, indent=4)}', file=datafile)
 
     print(f"Unimodal Gaussian Bayes Accuracy: {metrics_gaussian['accuracy']}")
     print(f"GMM Bayes Accuracy: {metrics_gmm['accuracy']}")
 
     return metrics_gaussian['accuracy'], metrics_gmm['accuracy']
+
+
+def plot_fda_decision_boundary(X_train, y_train, class_pairs, output_dir, model_type="gaussian"):
+    h = 0.02
+    for c1, c2 in class_pairs:
+        idx = np.logical_or(y_train == c1, y_train == c2)
+        X_train_pair = X_train[idx]
+        y_train_pair = y_train[idx]
+        y_train_pair_binary = np.where(y_train_pair == c1, 0, 1)
+
+        lda = LDA(n_components=1)
+        X_train_fda = lda.fit_transform(X_train_pair, y_train_pair_binary)
+
+        lda_classifier = LDA()
+        lda_classifier.fit(X_train_fda, y_train_pair_binary)
+
+        x_min, x_max = X_train_pair[:, 0].min(
+        ) - 1, X_train_pair[:, 0].max() + 1
+        y_min, y_max = X_train_pair[:, 1].min(
+        ) - 1, X_train_pair[:, 1].max() + 1
+        xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
+                             np.arange(y_min, y_max, h))
+
+        grid_points = np.c_[xx.ravel(), yy.ravel()]
+        grid_points_fda = lda.transform(grid_points)
+
+        Z = lda_classifier.predict(grid_points_fda)
+        Z = Z.reshape(xx.shape)
+
+        plt.figure(figsize=(8, 6))
+        plt.contourf(xx, yy, Z, alpha=0.8, cmap=plt.cm.coolwarm)
+        plt.scatter(X_train_pair[:, 0], X_train_pair[:, 1],
+                    c=y_train_pair_binary, edgecolors='k', cmap=plt.cm.coolwarm)
+
+        # Fisher discriminant direction (q)
+        q = lda.scalings_.flatten()
+        print(q, model_type)
+        projected_data = X_train_pair @ q
+        q_norm = np.linalg.norm(q)
+        q_unit = q / q_norm
+        positions = projected_data[:, np.newaxis] * q_unit
+
+        plt.scatter(positions[y_train_pair_binary == 0][:, 0], positions[y_train_pair_binary == 0][:, 1],
+                    color='blue', label=f'Class {c1} (FDA)', edgecolors='k', alpha=0.7)
+
+        plt.scatter(positions[y_train_pair_binary == 1][:, 0], positions[y_train_pair_binary == 1][:, 1],
+                    color='red', label=f'Class {c2} (FDA)', edgecolors='k', alpha=0.7)
+        # plt.scatter(projected_data[y_train_pair_binary == 0], [0] * sum(y_train_pair_binary == 0),
+        #             color='blue', label=f'Class {c1} (FDA)', edgecolors='k', alpha=0.7)
+        # plt.scatter(projected_data[y_train_pair_binary == 1], [0] * sum(y_train_pair_binary == 1),
+        #             color='red', label=f'Class {c2} (FDA)', edgecolors='k', alpha=0.7)
+
+        # Plot decision boundary using either Gaussian or GMM model
+        if model_type == "gaussian":
+            plt.title(
+                f"FDA Decision Boundary (Gaussian Model)\nClasses {c1} vs {c2}")
+        elif model_type == "gmm":
+            plt.title(
+                f"FDA Decision Boundary (GMM Model)\nClasses {c1} vs {c2}")
+
+        plt.xlabel('Feature 1')
+        plt.ylabel('Feature 2')
+        plt.grid(True)
+
+        # Normalized q vector for visualization
+        q_direction = q / np.linalg.norm(q)
+        q_perpendicular = np.array([-q_direction[1], q_direction[0]])
+
+        plt.quiver(0, 0, q_perpendicular[0], q_perpendicular[1], angles='xy',
+                   scale_units='xy', scale=5, color='black', width=0.005)
+
+        os.makedirs(output_dir, exist_ok=True)
+        plt.savefig(os.path.join(output_dir, f"fda_decision_boundary_{
+                    model_type}_{c1}_vs_{c2}.png"))
+        plt.close()
+
+
+def plot_fda_1d_representation(X_train, y_train, class_pairs, output_dir):
+    for c1, c2 in class_pairs:
+        idx = np.logical_or(y_train == c1, y_train == c2)
+        X_train_pair = X_train[idx]
+        y_train_pair = y_train[idx]
+        y_train_pair_binary = np.where(y_train_pair == c1, 0, 1)
+
+        lda = LDA(n_components=1)
+        X_train_fda = lda.fit_transform(X_train_pair, y_train_pair_binary)
+
+        plt.figure(figsize=(8, 6))
+        plt.scatter(X_train_fda[y_train_pair_binary == 0], [0] * len(X_train_fda[y_train_pair_binary == 0]),
+                    color='blue', label=f'Class {c1}', alpha=0.7)
+        plt.scatter(X_train_fda[y_train_pair_binary == 1], [0] * len(X_train_fda[y_train_pair_binary == 1]),
+                    color='red', label=f'Class {c2}', alpha=0.7)
+        plt.title(f'1D Representation for Classes {c1} and {c2}')
+        plt.xlabel('1D Reduced Representation')
+        plt.legend()
+        plt.grid(True)
+        os.makedirs(output_dir, exist_ok=True)
+        plt.savefig(os.path.join(
+            output_dir, f'fda_1d_representation_{c1}_vs_{c2}.png'))
+        plt.close()
+
+
+def process_fda_graphs(X_train, y_train, n_classes, output_dir):
+    class_pairs = list(combinations(range(n_classes), 2))
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Generate FDA decision boundary plots
+    plot_fda_decision_boundary(
+        X_train, y_train, class_pairs, output_dir, model_type="gaussian")
+    plot_fda_decision_boundary(
+        X_train, y_train, class_pairs, output_dir, model_type="gmm")
+
+    # Generate 1D representation plots
+    plot_fda_1d_representation(X_train, y_train, class_pairs, output_dir)
 
 
 n_classes = 3
@@ -142,6 +259,8 @@ for dataset_name in ['Dataset 1a: LS', 'Dataset 1b: NLS']:
     y_train = np.array(y_train)
     print(X_train.shape)
     print(y_train.shape)
+    process_fda_graphs(X_train=X_train, y_train=y_train,
+                       n_classes=3, output_dir=dataset_name)
 
     for i, file in enumerate(os.listdir(os.path.join(dataset, 'test'))):
         data = open(os.path.join(dataset, 'test', file),
@@ -163,7 +282,8 @@ for dataset_name in ['Dataset 1a: LS', 'Dataset 1b: NLS']:
         y_train=y_train,
         y_test=y_test,
         n_classes=n_classes,
-        gmm_components=gmm_components)
+        gmm_components=gmm_components,
+        datafile=open(f'{dataset_name}_fda.txt', 'w'))
 
 # DATASET 2
 for dataset_name in ['Dataset 2: Group12-SUN397(2b2)']:
@@ -195,10 +315,12 @@ for dataset_name in ['Dataset 2: Group12-SUN397(2b2)']:
     y_test = np.array(y_test)
     print(X_test.shape)
     print(y_test.shape)
+
     acc_gaussian, acc_gmm = perform_pairwise_fda_and_bayes(
         X_train=X_train,
         X_test=X_test,
         y_train=y_train,
         y_test=y_test,
         n_classes=n_classes,
-        gmm_components=gmm_components)
+        gmm_components=gmm_components,
+        datafile=open(f'{dataset_name}_fda.txt', 'w'))

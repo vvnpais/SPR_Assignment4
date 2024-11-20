@@ -1,0 +1,1113 @@
+
+Training SVM with linear kernel:
+Parameters for linear kernel: {'C': 0.1}
+Accuracy for linear kernel: 0.5733333333333334
+Classification Report for linear kernel:
+{
+    "accuracy": 0.5733333333333334,
+    "precision_per_class": [
+        0.6666666666666666,
+        0.5555555555555556,
+        0.48148148148148145
+    ],
+    "mean_precision": 0.5679012345679012,
+    "recall_per_class": [
+        0.8,
+        0.4,
+        0.52
+    ],
+    "mean_recall": 0.5733333333333334,
+    "f_measure_per_class": [
+        0.7272727272727272,
+        0.46511627906976744,
+        0.5
+    ],
+    "mean_f_measure": 0.5641296687808316,
+    "confusion_matrix": [
+        [
+            40.0,
+            0.0,
+            10.0
+        ],
+        [
+            12.0,
+            20.0,
+            18.0
+        ],
+        [
+            8.0,
+            16.0,
+            26.0
+        ]
+    ]
+}
+Parameters for linear kernel: {'C': 1}
+Accuracy for linear kernel: 0.5666666666666667
+Classification Report for linear kernel:
+{
+    "accuracy": 0.5666666666666667,
+    "precision_per_class": [
+        0.6610169491525424,
+        0.5405405405405406,
+        0.48148148148148145
+    ],
+    "mean_precision": 0.5610129903915214,
+    "recall_per_class": [
+        0.78,
+        0.4,
+        0.52
+    ],
+    "mean_recall": 0.5666666666666668,
+    "f_measure_per_class": [
+        0.7155963302752293,
+        0.45977011494252873,
+        0.5
+    ],
+    "mean_f_measure": 0.5584554817392527,
+    "confusion_matrix": [
+        [
+            39.0,
+            1.0,
+            10.0
+        ],
+        [
+            12.0,
+            20.0,
+            18.0
+        ],
+        [
+            8.0,
+            16.0,
+            26.0
+        ]
+    ]
+}
+Parameters for linear kernel: {'C': 10}
+Accuracy for linear kernel: 0.6466666666666666
+Classification Report for linear kernel:
+{
+    "accuracy": 0.6466666666666666,
+    "precision_per_class": [
+        0.8666666666666667,
+        0.5681818181818182,
+        0.5409836065573771
+    ],
+    "mean_precision": 0.6586106971352873,
+    "recall_per_class": [
+        0.78,
+        0.5,
+        0.66
+    ],
+    "mean_recall": 0.6466666666666666,
+    "f_measure_per_class": [
+        0.8210526315789474,
+        0.5319148936170213,
+        0.5945945945945946
+    ],
+    "mean_f_measure": 0.649187373263521,
+    "confusion_matrix": [
+        [
+            39.0,
+            3.0,
+            8.0
+        ],
+        [
+            5.0,
+            25.0,
+            20.0
+        ],
+        [
+            1.0,
+            16.0,
+            33.0
+        ]
+    ]
+}
+
+Training SVM with poly kernel:
+Parameters for poly kernel: {'C': 0.1, 'degree': 2, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.58
+Classification Report for poly kernel:
+{
+    "accuracy": 0.58,
+    "precision_per_class": [
+        0.6842105263157895,
+        0.6470588235294118,
+        0.4868421052631579
+    ],
+    "mean_precision": 0.6060371517027864,
+    "recall_per_class": [
+        0.78,
+        0.22,
+        0.74
+    ],
+    "mean_recall": 0.58,
+    "f_measure_per_class": [
+        0.7289719626168225,
+        0.3283582089552239,
+        0.5873015873015873
+    ],
+    "mean_f_measure": 0.5482105862912112,
+    "confusion_matrix": [
+        [
+            39.0,
+            0.0,
+            11.0
+        ],
+        [
+            11.0,
+            11.0,
+            28.0
+        ],
+        [
+            7.0,
+            6.0,
+            37.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 0.1, 'degree': 2, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.54
+Classification Report for poly kernel:
+{
+    "accuracy": 0.54,
+    "precision_per_class": [
+        0.5797101449275363,
+        0.5555555555555556,
+        0.49206349206349204
+    ],
+    "mean_precision": 0.5424430641821947,
+    "recall_per_class": [
+        0.8,
+        0.2,
+        0.62
+    ],
+    "mean_recall": 0.54,
+    "f_measure_per_class": [
+        0.6722689075630253,
+        0.29411764705882354,
+        0.5486725663716814
+    ],
+    "mean_f_measure": 0.5050197069978434,
+    "confusion_matrix": [
+        [
+            40.0,
+            0.0,
+            10.0
+        ],
+        [
+            18.0,
+            10.0,
+            22.0
+        ],
+        [
+            11.0,
+            8.0,
+            31.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 0.1, 'degree': 3, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.58
+Classification Report for poly kernel:
+{
+    "accuracy": 0.58,
+    "precision_per_class": [
+        0.7777777777777778,
+        0.6153846153846154,
+        0.4782608695652174
+    ],
+    "mean_precision": 0.6238077542425368,
+    "recall_per_class": [
+        0.7,
+        0.16,
+        0.88
+    ],
+    "mean_recall": 0.58,
+    "f_measure_per_class": [
+        0.7368421052631577,
+        0.253968253968254,
+        0.619718309859155
+    ],
+    "mean_f_measure": 0.5368428896968556,
+    "confusion_matrix": [
+        [
+            35.0,
+            0.0,
+            15.0
+        ],
+        [
+            9.0,
+            8.0,
+            33.0
+        ],
+        [
+            1.0,
+            5.0,
+            44.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 0.1, 'degree': 3, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.5533333333333333
+Classification Report for poly kernel:
+{
+    "accuracy": 0.5533333333333333,
+    "precision_per_class": [
+        0.5714285714285714,
+        0.5833333333333334,
+        0.5245901639344263
+    ],
+    "mean_precision": 0.559784022898777,
+    "recall_per_class": [
+        0.88,
+        0.14,
+        0.64
+    ],
+    "mean_recall": 0.5533333333333333,
+    "f_measure_per_class": [
+        0.6929133858267715,
+        0.22580645161290325,
+        0.5765765765765766
+    ],
+    "mean_f_measure": 0.4984321380054171,
+    "confusion_matrix": [
+        [
+            44.0,
+            0.0,
+            6.0
+        ],
+        [
+            20.0,
+            7.0,
+            23.0
+        ],
+        [
+            13.0,
+            5.0,
+            32.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 0.1, 'degree': 4, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.5733333333333334
+Classification Report for poly kernel:
+{
+    "accuracy": 0.5733333333333334,
+    "precision_per_class": [
+        0.868421052631579,
+        0.5833333333333334,
+        0.46
+    ],
+    "mean_precision": 0.6372514619883041,
+    "recall_per_class": [
+        0.66,
+        0.14,
+        0.92
+    ],
+    "mean_recall": 0.5733333333333334,
+    "f_measure_per_class": [
+        0.7500000000000001,
+        0.22580645161290325,
+        0.6133333333333333
+    ],
+    "mean_f_measure": 0.5297132616487455,
+    "confusion_matrix": [
+        [
+            33.0,
+            1.0,
+            16.0
+        ],
+        [
+            5.0,
+            7.0,
+            38.0
+        ],
+        [
+            0.0,
+            4.0,
+            46.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 0.1, 'degree': 4, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.38666666666666666
+Classification Report for poly kernel:
+{
+    "accuracy": 0.38666666666666666,
+    "precision_per_class": [
+        1.0,
+        0.5833333333333334,
+        0.3409090909090909
+    ],
+    "mean_precision": 0.6414141414141414,
+    "recall_per_class": [
+        0.12,
+        0.14,
+        0.9
+    ],
+    "mean_recall": 0.3866666666666667,
+    "f_measure_per_class": [
+        0.21428571428571425,
+        0.22580645161290325,
+        0.49450549450549447
+    ],
+    "mean_f_measure": 0.3115325534680373,
+    "confusion_matrix": [
+        [
+            6.0,
+            0.0,
+            44.0
+        ],
+        [
+            0.0,
+            7.0,
+            43.0
+        ],
+        [
+            0.0,
+            5.0,
+            45.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 1, 'degree': 2, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.66
+Classification Report for poly kernel:
+{
+    "accuracy": 0.66,
+    "precision_per_class": [
+        0.8837209302325582,
+        0.6341463414634146,
+        0.5303030303030303
+    ],
+    "mean_precision": 0.6827234339996676,
+    "recall_per_class": [
+        0.76,
+        0.52,
+        0.7
+    ],
+    "mean_recall": 0.66,
+    "f_measure_per_class": [
+        0.8172043010752689,
+        0.5714285714285714,
+        0.603448275862069
+    ],
+    "mean_f_measure": 0.664027049455303,
+    "confusion_matrix": [
+        [
+            38.0,
+            1.0,
+            11.0
+        ],
+        [
+            4.0,
+            26.0,
+            20.0
+        ],
+        [
+            1.0,
+            14.0,
+            35.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 1, 'degree': 2, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.54
+Classification Report for poly kernel:
+{
+    "accuracy": 0.54,
+    "precision_per_class": [
+        0.5797101449275363,
+        0.5555555555555556,
+        0.49206349206349204
+    ],
+    "mean_precision": 0.5424430641821947,
+    "recall_per_class": [
+        0.8,
+        0.2,
+        0.62
+    ],
+    "mean_recall": 0.54,
+    "f_measure_per_class": [
+        0.6722689075630253,
+        0.29411764705882354,
+        0.5486725663716814
+    ],
+    "mean_f_measure": 0.5050197069978434,
+    "confusion_matrix": [
+        [
+            40.0,
+            0.0,
+            10.0
+        ],
+        [
+            18.0,
+            10.0,
+            22.0
+        ],
+        [
+            11.0,
+            8.0,
+            31.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 1, 'degree': 3, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.56
+Classification Report for poly kernel:
+{
+    "accuracy": 0.56,
+    "precision_per_class": [
+        0.8205128205128205,
+        0.5,
+        0.4567901234567901
+    ],
+    "mean_precision": 0.5924343146565368,
+    "recall_per_class": [
+        0.64,
+        0.3,
+        0.74
+    ],
+    "mean_recall": 0.5599999999999999,
+    "f_measure_per_class": [
+        0.7191011235955057,
+        0.37499999999999994,
+        0.564885496183206
+    ],
+    "mean_f_measure": 0.5529955399262372,
+    "confusion_matrix": [
+        [
+            32.0,
+            4.0,
+            14.0
+        ],
+        [
+            5.0,
+            15.0,
+            30.0
+        ],
+        [
+            2.0,
+            11.0,
+            37.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 1, 'degree': 3, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.5533333333333333
+Classification Report for poly kernel:
+{
+    "accuracy": 0.5533333333333333,
+    "precision_per_class": [
+        0.5714285714285714,
+        0.5833333333333334,
+        0.5245901639344263
+    ],
+    "mean_precision": 0.559784022898777,
+    "recall_per_class": [
+        0.88,
+        0.14,
+        0.64
+    ],
+    "mean_recall": 0.5533333333333333,
+    "f_measure_per_class": [
+        0.6929133858267715,
+        0.22580645161290325,
+        0.5765765765765766
+    ],
+    "mean_f_measure": 0.4984321380054171,
+    "confusion_matrix": [
+        [
+            44.0,
+            0.0,
+            6.0
+        ],
+        [
+            20.0,
+            7.0,
+            23.0
+        ],
+        [
+            13.0,
+            5.0,
+            32.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 1, 'degree': 4, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.52
+Classification Report for poly kernel:
+{
+    "accuracy": 0.52,
+    "precision_per_class": [
+        0.8378378378378378,
+        0.4,
+        0.42045454545454547
+    ],
+    "mean_precision": 0.5527641277641278,
+    "recall_per_class": [
+        0.62,
+        0.2,
+        0.74
+    ],
+    "mean_recall": 0.52,
+    "f_measure_per_class": [
+        0.7126436781609196,
+        0.26666666666666666,
+        0.5362318840579711
+    ],
+    "mean_f_measure": 0.5051807429618523,
+    "confusion_matrix": [
+        [
+            31.0,
+            4.0,
+            15.0
+        ],
+        [
+            4.0,
+            10.0,
+            36.0
+        ],
+        [
+            2.0,
+            11.0,
+            37.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 1, 'degree': 4, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.38666666666666666
+Classification Report for poly kernel:
+{
+    "accuracy": 0.38666666666666666,
+    "precision_per_class": [
+        1.0,
+        0.5833333333333334,
+        0.3409090909090909
+    ],
+    "mean_precision": 0.6414141414141414,
+    "recall_per_class": [
+        0.12,
+        0.14,
+        0.9
+    ],
+    "mean_recall": 0.3866666666666667,
+    "f_measure_per_class": [
+        0.21428571428571425,
+        0.22580645161290325,
+        0.49450549450549447
+    ],
+    "mean_f_measure": 0.3115325534680373,
+    "confusion_matrix": [
+        [
+            6.0,
+            0.0,
+            44.0
+        ],
+        [
+            0.0,
+            7.0,
+            43.0
+        ],
+        [
+            0.0,
+            5.0,
+            45.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 10, 'degree': 2, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.52
+Classification Report for poly kernel:
+{
+    "accuracy": 0.52,
+    "precision_per_class": [
+        0.7727272727272727,
+        0.38095238095238093,
+        0.4375
+    ],
+    "mean_precision": 0.5303932178932179,
+    "recall_per_class": [
+        0.68,
+        0.32,
+        0.56
+    ],
+    "mean_recall": 0.52,
+    "f_measure_per_class": [
+        0.7234042553191491,
+        0.34782608695652173,
+        0.4912280701754386
+    ],
+    "mean_f_measure": 0.5208194708170365,
+    "confusion_matrix": [
+        [
+            34.0,
+            8.0,
+            8.0
+        ],
+        [
+            6.0,
+            16.0,
+            28.0
+        ],
+        [
+            4.0,
+            18.0,
+            28.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 10, 'degree': 2, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.54
+Classification Report for poly kernel:
+{
+    "accuracy": 0.54,
+    "precision_per_class": [
+        0.5797101449275363,
+        0.5555555555555556,
+        0.49206349206349204
+    ],
+    "mean_precision": 0.5424430641821947,
+    "recall_per_class": [
+        0.8,
+        0.2,
+        0.62
+    ],
+    "mean_recall": 0.54,
+    "f_measure_per_class": [
+        0.6722689075630253,
+        0.29411764705882354,
+        0.5486725663716814
+    ],
+    "mean_f_measure": 0.5050197069978434,
+    "confusion_matrix": [
+        [
+            40.0,
+            0.0,
+            10.0
+        ],
+        [
+            18.0,
+            10.0,
+            22.0
+        ],
+        [
+            11.0,
+            8.0,
+            31.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 10, 'degree': 3, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.5133333333333333
+Classification Report for poly kernel:
+{
+    "accuracy": 0.5133333333333333,
+    "precision_per_class": [
+        0.8048780487804879,
+        0.40540540540540543,
+        0.4027777777777778
+    ],
+    "mean_precision": 0.5376870773212237,
+    "recall_per_class": [
+        0.66,
+        0.3,
+        0.58
+    ],
+    "mean_recall": 0.5133333333333333,
+    "f_measure_per_class": [
+        0.7252747252747254,
+        0.3448275862068966,
+        0.47540983606557374
+    ],
+    "mean_f_measure": 0.5151707158490653,
+    "confusion_matrix": [
+        [
+            33.0,
+            3.0,
+            14.0
+        ],
+        [
+            6.0,
+            15.0,
+            29.0
+        ],
+        [
+            2.0,
+            19.0,
+            29.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 10, 'degree': 3, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.5533333333333333
+Classification Report for poly kernel:
+{
+    "accuracy": 0.5533333333333333,
+    "precision_per_class": [
+        0.5714285714285714,
+        0.5833333333333334,
+        0.5245901639344263
+    ],
+    "mean_precision": 0.559784022898777,
+    "recall_per_class": [
+        0.88,
+        0.14,
+        0.64
+    ],
+    "mean_recall": 0.5533333333333333,
+    "f_measure_per_class": [
+        0.6929133858267715,
+        0.22580645161290325,
+        0.5765765765765766
+    ],
+    "mean_f_measure": 0.4984321380054171,
+    "confusion_matrix": [
+        [
+            44.0,
+            0.0,
+            6.0
+        ],
+        [
+            20.0,
+            7.0,
+            23.0
+        ],
+        [
+            13.0,
+            5.0,
+            32.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 10, 'degree': 4, 'gamma': 'scale'}
+Accuracy for poly kernel: 0.5133333333333333
+Classification Report for poly kernel:
+{
+    "accuracy": 0.5133333333333333,
+    "precision_per_class": [
+        0.8333333333333334,
+        0.4166666666666667,
+        0.41025641025641024
+    ],
+    "mean_precision": 0.5534188034188033,
+    "recall_per_class": [
+        0.6,
+        0.3,
+        0.64
+    ],
+    "mean_recall": 0.5133333333333333,
+    "f_measure_per_class": [
+        0.6976744186046512,
+        0.3488372093023256,
+        0.5
+    ],
+    "mean_f_measure": 0.5155038759689923,
+    "confusion_matrix": [
+        [
+            30.0,
+            5.0,
+            15.0
+        ],
+        [
+            4.0,
+            15.0,
+            31.0
+        ],
+        [
+            2.0,
+            16.0,
+            32.0
+        ]
+    ]
+}
+Parameters for poly kernel: {'C': 10, 'degree': 4, 'gamma': 'auto'}
+Accuracy for poly kernel: 0.38666666666666666
+Classification Report for poly kernel:
+{
+    "accuracy": 0.38666666666666666,
+    "precision_per_class": [
+        1.0,
+        0.5833333333333334,
+        0.3409090909090909
+    ],
+    "mean_precision": 0.6414141414141414,
+    "recall_per_class": [
+        0.12,
+        0.14,
+        0.9
+    ],
+    "mean_recall": 0.3866666666666667,
+    "f_measure_per_class": [
+        0.21428571428571425,
+        0.22580645161290325,
+        0.49450549450549447
+    ],
+    "mean_f_measure": 0.3115325534680373,
+    "confusion_matrix": [
+        [
+            6.0,
+            0.0,
+            44.0
+        ],
+        [
+            0.0,
+            7.0,
+            43.0
+        ],
+        [
+            0.0,
+            5.0,
+            45.0
+        ]
+    ]
+}
+
+Training SVM with rbf kernel:
+Parameters for rbf kernel: {'C': 0.1, 'gamma': 'scale'}
+Accuracy for rbf kernel: 0.6266666666666667
+Classification Report for rbf kernel:
+{
+    "accuracy": 0.6266666666666667,
+    "precision_per_class": [
+        0.7647058823529411,
+        0.5652173913043478,
+        0.5471698113207547
+    ],
+    "mean_precision": 0.6256976949926812,
+    "recall_per_class": [
+        0.78,
+        0.52,
+        0.58
+    ],
+    "mean_recall": 0.6266666666666666,
+    "f_measure_per_class": [
+        0.7722772277227723,
+        0.5416666666666667,
+        0.5631067961165048
+    ],
+    "mean_f_measure": 0.6256835635019813,
+    "confusion_matrix": [
+        [
+            39.0,
+            2.0,
+            9.0
+        ],
+        [
+            9.0,
+            26.0,
+            15.0
+        ],
+        [
+            3.0,
+            18.0,
+            29.0
+        ]
+    ]
+}
+Parameters for rbf kernel: {'C': 0.1, 'gamma': 'auto'}
+Accuracy for rbf kernel: 0.5733333333333334
+Classification Report for rbf kernel:
+{
+    "accuracy": 0.5733333333333334,
+    "precision_per_class": [
+        0.6666666666666666,
+        0.5555555555555556,
+        0.48148148148148145
+    ],
+    "mean_precision": 0.5679012345679012,
+    "recall_per_class": [
+        0.8,
+        0.4,
+        0.52
+    ],
+    "mean_recall": 0.5733333333333334,
+    "f_measure_per_class": [
+        0.7272727272727272,
+        0.46511627906976744,
+        0.5
+    ],
+    "mean_f_measure": 0.5641296687808316,
+    "confusion_matrix": [
+        [
+            40.0,
+            0.0,
+            10.0
+        ],
+        [
+            12.0,
+            20.0,
+            18.0
+        ],
+        [
+            8.0,
+            16.0,
+            26.0
+        ]
+    ]
+}
+Parameters for rbf kernel: {'C': 1, 'gamma': 'scale'}
+Accuracy for rbf kernel: 0.6333333333333333
+Classification Report for rbf kernel:
+{
+    "accuracy": 0.6333333333333333,
+    "precision_per_class": [
+        0.7755102040816326,
+        0.5853658536585366,
+        0.55
+    ],
+    "mean_precision": 0.6369586859133898,
+    "recall_per_class": [
+        0.76,
+        0.48,
+        0.66
+    ],
+    "mean_recall": 0.6333333333333333,
+    "f_measure_per_class": [
+        0.7676767676767676,
+        0.5274725274725274,
+        0.6000000000000001
+    ],
+    "mean_f_measure": 0.6317164317164318,
+    "confusion_matrix": [
+        [
+            38.0,
+            2.0,
+            10.0
+        ],
+        [
+            9.0,
+            24.0,
+            17.0
+        ],
+        [
+            2.0,
+            15.0,
+            33.0
+        ]
+    ]
+}
+Parameters for rbf kernel: {'C': 1, 'gamma': 'auto'}
+Accuracy for rbf kernel: 0.5733333333333334
+Classification Report for rbf kernel:
+{
+    "accuracy": 0.5733333333333334,
+    "precision_per_class": [
+        0.6666666666666666,
+        0.5555555555555556,
+        0.48148148148148145
+    ],
+    "mean_precision": 0.5679012345679012,
+    "recall_per_class": [
+        0.8,
+        0.4,
+        0.52
+    ],
+    "mean_recall": 0.5733333333333334,
+    "f_measure_per_class": [
+        0.7272727272727272,
+        0.46511627906976744,
+        0.5
+    ],
+    "mean_f_measure": 0.5641296687808316,
+    "confusion_matrix": [
+        [
+            40.0,
+            0.0,
+            10.0
+        ],
+        [
+            12.0,
+            20.0,
+            18.0
+        ],
+        [
+            8.0,
+            16.0,
+            26.0
+        ]
+    ]
+}
+Parameters for rbf kernel: {'C': 10, 'gamma': 'scale'}
+Accuracy for rbf kernel: 0.5733333333333334
+Classification Report for rbf kernel:
+{
+    "accuracy": 0.5733333333333334,
+    "precision_per_class": [
+        0.8333333333333334,
+        0.44,
+        0.5
+    ],
+    "mean_precision": 0.5911111111111111,
+    "recall_per_class": [
+        0.7,
+        0.44,
+        0.58
+    ],
+    "mean_recall": 0.5733333333333333,
+    "f_measure_per_class": [
+        0.7608695652173915,
+        0.44,
+        0.537037037037037
+    ],
+    "mean_f_measure": 0.5793022007514762,
+    "confusion_matrix": [
+        [
+            35.0,
+            8.0,
+            7.0
+        ],
+        [
+            6.0,
+            22.0,
+            22.0
+        ],
+        [
+            1.0,
+            20.0,
+            29.0
+        ]
+    ]
+}
+Parameters for rbf kernel: {'C': 10, 'gamma': 'auto'}
+Accuracy for rbf kernel: 0.5733333333333334
+Classification Report for rbf kernel:
+{
+    "accuracy": 0.5733333333333334,
+    "precision_per_class": [
+        0.6666666666666666,
+        0.5555555555555556,
+        0.48148148148148145
+    ],
+    "mean_precision": 0.5679012345679012,
+    "recall_per_class": [
+        0.8,
+        0.4,
+        0.52
+    ],
+    "mean_recall": 0.5733333333333334,
+    "f_measure_per_class": [
+        0.7272727272727272,
+        0.46511627906976744,
+        0.5
+    ],
+    "mean_f_measure": 0.5641296687808316,
+    "confusion_matrix": [
+        [
+            40.0,
+            0.0,
+            10.0
+        ],
+        [
+            12.0,
+            20.0,
+            18.0
+        ],
+        [
+            8.0,
+            16.0,
+            26.0
+        ]
+    ]
+}
